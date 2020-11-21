@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import pBar} from '@material-ui/core';
+import {AppBar} from '@material-ui/core';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import {TextField} from '@material-ui/core';
 import { Button } from '@material-ui/core';
@@ -12,22 +12,46 @@ import { Button } from '@material-ui/core';
 
         const { values, handleChange } = this.props;
         return (
-            <MuiThemeProvider> 
-           <React.Fragment>
-           <AppBar title="Enter User Details" />
-               
-           
-           <Button color="primary">Hello World</Button>
-           <TextField
-              placeholder="Enter Your First Name"
-              label="First Name"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
-              margin="normal"
-              fullWidth
-            />
-           </React.Fragment>
-            </MuiThemeProvider>
+            <MuiThemeProvider>
+            <>
+              
+                <AppBar color="primary" title="Enter User Details" >
+                </AppBar>
+                <TextField
+                  placeholder="Enter Your First Name"
+                  label="First Name"
+                  onChange={handleChange('firstName')}
+                  defaultValue={values.firstName}
+                  margin="normal"
+                  fullWidth
+                />
+                <br />
+                <TextField
+                  placeholder="Enter Your Last Name"
+                  label="Last Name"
+                  onChange={handleChange('lastName')}
+                  defaultValue={values.lastName}
+                  margin="normal"
+                  fullWidth
+                />
+                <br />
+                <TextField
+                  placeholder="Enter Your Email"
+                  label="Email"
+                  onChange={handleChange('email')}
+                  defaultValue={values.email}
+                  margin="normal"
+                  fullWidth
+                />
+                <br />
+                <Button
+                  color="primary"
+                  variant="contained"
+                  onClick={this.continue}
+                >Continue</Button>
+            
+            </>
+          </MuiThemeProvider>
            
       
         )
