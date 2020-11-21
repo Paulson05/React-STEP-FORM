@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import AppBar from '@material-ui/core/AppBar';
-// import TextField from '@material-ui/TextField';
-// import Button from '@material-ui/Button';
-export class FormUserDetails extends Component {
+import pBar} from '@material-ui/core';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import {TextField} from '@material-ui/core';
+import { Button } from '@material-ui/core';
+ class FormUserDetails extends Component {
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -12,12 +12,23 @@ export class FormUserDetails extends Component {
 
         const { values, handleChange } = this.props;
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider> 
            <React.Fragment>
-               
            <AppBar title="Enter User Details" />
+               
+           
+           <Button color="primary">Hello World</Button>
+           <TextField
+              placeholder="Enter Your First Name"
+              label="First Name"
+              onChange={handleChange('firstName')}
+              defaultValue={values.firstName}
+              margin="normal"
+              fullWidth
+            />
            </React.Fragment>
             </MuiThemeProvider>
+           
       
         )
     }
