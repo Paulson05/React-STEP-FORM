@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {AppBar} from '@material-ui/core';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import {TextField} from '@material-ui/core';
+import {Dialog} from '@material-ui/core';
 import { Button } from '@material-ui/core';
  class FormUserDetails extends Component {
     continue = e => {
@@ -14,8 +15,14 @@ import { Button } from '@material-ui/core';
         return (
             <MuiThemeProvider>
             <>
-              
+            <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
                 <AppBar color="primary" title="Enter User Details" >
+                 
+                 
                 </AppBar>
                 <TextField
                   placeholder="Enter Your First Name"
@@ -49,7 +56,7 @@ import { Button } from '@material-ui/core';
                   variant="contained"
                   onClick={this.continue}
                 >Continue</Button>
-            
+            </Dialog>
             </>
           </MuiThemeProvider>
            
